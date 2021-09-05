@@ -24,6 +24,13 @@ class ViewController: UIViewController {
         return button
     }()
     
+    let colors: [UIColor] = [
+        .systemRed,
+        .systemBlue,
+        .systemTeal,
+        .systemPink
+    ]
+    
     func getRandomPhoto() {
         let urlString = "https://source.unsplash.com/random/600x600"
         let url = URL(string: urlString)!
@@ -53,6 +60,8 @@ class ViewController: UIViewController {
     
     @objc func didTapButton() {
         getRandomPhoto()
+        
+        view.backgroundColor = colors.randomElement()
     }
     
     override func viewDidLayoutSubviews() {
